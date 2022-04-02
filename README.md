@@ -5,6 +5,8 @@
 目前支持单模型加载及多模型顺序加载。        
 其他特性正在扩展中。
 
+2022-04-02：替换cdn资源失效地址；增加参数自定义模型的div容器id，避免同一个页面加载两次组件渲染错乱的问题；
+
 传送门：[Github](https://github.com/hql7/wl-bim-viewer)      &        [autodesk forge viewer文档](https://forge.autodesk.com/en/docs/viewer/v7/reference/Viewing/)
 
 ## [在线访问](http://wlui.com.cn/ui/bim) 
@@ -28,6 +30,7 @@ Vue.use(wlBimViewer);
 
 ### 重要更新
 > 1.1.0 减少组件包体积，将js依赖cdn；请勿使用低于1.1.0版本
+> 1.2.0 2022-04-02：替换cdn资源失效地址；增加参数自定义模型的div容器id，避免同一个页面加载两次组件渲染错乱的问题；
 
 ## 文档
 
@@ -38,6 +41,7 @@ Vue.use(wlBimViewer);
 | 2 | props | 配置项,详见下 | Object | - |
 | 3 | multiple | 是否开启多模型顺序加载 | Boolean | false |
 | 4 | changeClean | 是否开启当docs变化，清理之前的模型然后重新加载新模型 | Boolean | false |
+| 5 | divID | 模型的div容器id，解决一个页面加载两次组件渲染错乱的问题 | String | wl-viewer-box |
 
 ### props
 | 序号 | 参数 | 说明 | 默认字段 | 字段值类型 |
@@ -73,6 +77,8 @@ Vue.use(wlBimViewer);
 | 1 | - | 位于模型dom下的自定义dom区 | 
 
 ### 版本记录
+> 1.2.0 减少组件包体积，将js依赖cdn
+
 > 1.1.0 减少组件包体积，将js依赖cdn
 
 > 1.0.0 因国外cdn时间波动太大，将js依赖本地化，并优化初始化事件防止init错误
